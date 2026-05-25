@@ -40,7 +40,8 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .p{position:absolute;width:2px;height:2px;border-radius:50%;opacity:.2;animation:up linear infinite}
 @keyframes up{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:.2}90%{opacity:.2}100%{transform:translateY(-10vh) scale(1);opacity:0}}
 /* APP */
-.app{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:12px;overflow-x:hidden}
+.app{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:12px;overflow-x:hidden;width:100%}
+@media(max-width:640px){.app{padding:8px}.cd{padding:12px}.fr{gap:4px}}
 @media(min-width:768px){.app{padding:20px}}
 /* HEADER */
 .hdr{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--glass);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid var(--line);border-radius:var(--r);margin-bottom:16px;position:sticky;top:8px;z-index:100;gap:8px}
@@ -78,7 +79,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .st .l{font-size:.58rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:2px;font-weight:500}
 @media(min-width:768px){.st .l{font-size:.65rem}}
 /* CARDS */
-.cd{background:var(--glass);backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:12px;transition:border-color .3s}
+.cd{background:var(--glass);backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:12px;transition:border-color .3s;min-width:0;overflow:hidden}
 .cd:hover{border-color:var(--line2)}
 @media(min-width:768px){.cd{padding:20px;margin-bottom:16px}}
 .cd-t{display:flex;align-items:center;gap:7px;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:14px}
@@ -109,9 +110,9 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .ch.income-ch{background:rgba(0,214,143,.12);color:#00d68f;border-color:rgba(0,214,143,.22)}
 /* FORM */
 .fr{display:flex;flex-wrap:wrap;gap:6px}
-.fr input,.fr select{flex:1;min-width:80px;padding:9px 12px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-sm);color:var(--text);font-family:var(--font);font-size:.82rem;outline:none;transition:border-color .2s}
+.fr input,.fr select{flex:1;min-width:0;max-width:100%;padding:9px 12px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-sm);color:var(--text);font-family:var(--font);font-size:.82rem;outline:none;transition:border-color .2s}
 .fr input:focus,.fr select:focus{border-color:var(--acc)}
-.fr select{cursor:pointer;min-width:90px}
+.fr select{cursor:pointer;min-width:0;width:auto}
 .fr select option{background:var(--panel)}
 .btn{padding:9px 18px;background:var(--grad);color:#fff;border:none;border-radius:var(--r-sm);font-family:var(--font);font-weight:600;font-size:.82rem;cursor:pointer;transition:all .2s;white-space:nowrap;min-height:40px}
 .btn:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(255,107,53,.3)}
@@ -138,8 +139,8 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:1
 .gl-a{display:inline-flex;gap:3px;margin-left:5px}
 .gl-a button{background:none;border:1px solid var(--line);color:var(--muted);padding:1px 5px;border-radius:3px;cursor:pointer;font-size:.55rem;transition:all .2s;min-width:22px;min-height:22px}
 .gl-a button:hover{border-color:var(--acc);color:var(--acc)}
-.ar{display:flex;gap:6px;margin-top:8px}
-.ar input,.ar select{flex:1;padding:7px 10px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-sm);color:var(--text);font-family:var(--font);font-size:.75rem;outline:none}
+.ar{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.ar input,.ar select{flex:1;min-width:0;max-width:100%;padding:7px 10px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-sm);color:var(--text);font-family:var(--font);font-size:.75rem;outline:none}
 .ar button{padding:7px 12px;background:var(--panel2);color:var(--acc);border:1px solid var(--acc);border-radius:var(--r-sm);font-family:var(--font);font-weight:600;font-size:.75rem;cursor:pointer;transition:all .2s;white-space:nowrap;min-height:36px}
 .ar button:hover{background:var(--acc);color:#fff}
 /* TX */
